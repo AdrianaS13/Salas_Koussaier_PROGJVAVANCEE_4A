@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class PlayerMovementScript : MonoBehaviour
 {
+    [SerializeField]
+    public enum SIDE { Left,Mid,Right}
 
+    public float xValue;
+    float NewXPos = 0f;
+    public SIDE m_Side = SIDE.Mid;
     [SerializeField]
     private Rigidbody rb;
 
@@ -16,10 +21,36 @@ public class PlayerMovementScript : MonoBehaviour
     [SerializeField]
     private float speedAuto;
 
+
     void Update()
     {
         transform.position += transform.forward * Time.deltaTime * speedAuto;
-
+        if(Input.GetKeyDown(KeyCode.A)) 
+        { 
+            if(m_Side == SIDE.Mid)
+            {
+                NewXPos = -xValue;
+                m_Side = SIDE.Left;
+            }
+            else if (m_Side == SIDE.Right)
+            {
+                NewXPos = 0;
+                m_Side = SIDE.Mid;
+            }
+        }else if (Input.GetKeyDown(KeyCode.D))
+        {
+            if (m_Side == SIDE.Mid)
+            {
+                NewXPos = xValue;
+                m_Side = SIDE.Right;
+            }
+            else if (m_Side == SIDE.Left)
+            {
+                NewXPos = 0;
+                m_Side = SIDE.Mid;
+            }
+        }
+        transform.position = new Vector3(NewXPos, transform.position.y, transform.position.z);
         if (Input.GetKeyDown(KeyCode.S))
             animator.SetBool("GoDown", true);
         else
@@ -31,6 +62,8 @@ public class PlayerMovementScript : MonoBehaviour
             rb.AddForce(Vector3.up, ForceMode.Impulse);
         } else
             animator.SetBool("isRunning", false);
+
+        
     }
 
     public void RemoveCollider()

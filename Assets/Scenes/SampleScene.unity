@@ -2364,6 +2364,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c450841a0bd79e946a072e7a510b0c57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xValue: 3
+  m_Side: 1
   rb: {fileID: 937393137}
   animator: {fileID: 937393142}
   col: {fileID: 937393143}
