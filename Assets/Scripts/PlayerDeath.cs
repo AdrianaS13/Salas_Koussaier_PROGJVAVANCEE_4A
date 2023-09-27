@@ -15,6 +15,12 @@ public class PlayerDeath : MonoBehaviour
     [SerializeField]private TMP_Text EndScore;
     private bool paused = false;
 
+    [SerializeField]private AudioSource Collect;
+    [SerializeField]private AudioSource Death;
+    [SerializeField]private AudioSource Won;
+    [SerializeField]private AudioSource BackgroundMusic;
+
+
     void Update()
     {
         scoreTxt.text = "Score : "+(score*10);
@@ -24,11 +30,13 @@ public class PlayerDeath : MonoBehaviour
             Time.timeScale = 0;
             PausePanel.SetActive(true);
             paused = true;
+            BackgroundMusic.Pause();
         } else if (Input.GetKeyDown(KeyCode.P) && paused)
         {
             Time.timeScale = 1;
             PausePanel.SetActive(false);
             paused = false;
+            BackgroundMusic.Play();
         }
     }
 
@@ -36,18 +44,23 @@ public class PlayerDeath : MonoBehaviour
     {
         if (collision.gameObject.tag == "Obstacle")
         {
+            Death.Play();
             Time.timeScale = 0;
             LostPanel.SetActive(true);
+            BackgroundMusic.Stop();
         }
         if (collision.gameObject.tag == "Coin")
         {
             score++;
+            Collect.Play();
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.tag == "END")
         {
+            Won.Play();
             Time.timeScale = 0;
             GameWon.SetActive(true);
+            BackgroundMusic.Stop();
             EndScore.text = "Score : "+score*10;
         }
     } 

@@ -21,6 +21,11 @@ public class PlayerMovementScript : MonoBehaviour
     [SerializeField]
     private float speedAuto;
 
+    private bool jumped=false;
+
+    [SerializeField]private AudioSource Jump;
+    [SerializeField]private AudioSource Dash;
+
 
     void Update()
     {
@@ -51,21 +56,28 @@ public class PlayerMovementScript : MonoBehaviour
             }
         }
         transform.position = new Vector3(NewXPos, transform.position.y, transform.position.z);
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S) && (!jumped))
+        {
             animator.SetBool("GoDown", true);
+            Dash.Play();
+
+        }
         else
             animator.SetBool("GoDown", false);
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && (transform.position.y < 1.5f))
         {
+            Jump.Play();
             animator.SetBool("isRunning", true);
             rb.AddForce(Vector3.up, ForceMode.Impulse);
+            jumped = true;
         } else
             animator.SetBool("isRunning", false);
+            jumped=false;
 
         
     }
-
+    
     public void RemoveCollider()
     {
         col.enabled = false;
