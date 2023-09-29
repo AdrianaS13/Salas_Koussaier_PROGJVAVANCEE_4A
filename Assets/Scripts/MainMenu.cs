@@ -15,6 +15,10 @@ public class MainMenu : MonoBehaviour
         ButtonClick.Play();
     }
 
+    public void Settings()
+    {
+        SceneManager.LoadScene(5);
+    }
     public void Quit()
     {
         ButtonClick.Play();

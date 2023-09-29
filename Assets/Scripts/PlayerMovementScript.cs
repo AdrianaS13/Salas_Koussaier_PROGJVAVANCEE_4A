@@ -29,6 +29,7 @@ public class PlayerMovementScript : MonoBehaviour
     public AudioSource Dash;
 
     #endregion
+    
     #region Player movement
     void Update()
     {
@@ -112,5 +113,5 @@ public class PlayerMovementScript : MonoBehaviour
         col.enabled = true;
         rb.useGravity = true;
     }
-    
+    #endregion
 }

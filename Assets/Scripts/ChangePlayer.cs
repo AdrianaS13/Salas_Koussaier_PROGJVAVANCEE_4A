@@ -31,7 +31,6 @@ public class ChangePlayer : MonoBehaviour
     {
         PlayerPrefs.SetInt("Player", playerChosen);
         PlayerPrefs.Save();
-        Debug.Log("Chose " + playerChosen);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
