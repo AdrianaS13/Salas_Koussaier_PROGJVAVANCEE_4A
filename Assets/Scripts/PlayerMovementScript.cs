@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovementScript : MonoBehaviour
 {
+   
     [SerializeField]
     public enum SIDE { Left,Mid,Right}
 
@@ -24,9 +25,14 @@ public class PlayerMovementScript : MonoBehaviour
     private bool jumped=false;
     public float targetx;
 
-    [SerializeField]private AudioSource Jump;
-    [SerializeField]private AudioSource Dash;
+    [SerializeField]public AudioSource Jump;
+    public AudioSource Dash;
 
+    private void Start()
+    {
+        PlayerPrefs.GetInt("Player");
+
+    }
     void Update()
     {
         transform.position += transform.forward * Time.deltaTime * speedAuto;
