@@ -54,6 +54,7 @@ public class PlayerDeath : MonoBehaviour
             {
                 StartCoroutine(MomEnter());
                 firstTime = false;
+                
             } else 
             {
                 Death.Play();

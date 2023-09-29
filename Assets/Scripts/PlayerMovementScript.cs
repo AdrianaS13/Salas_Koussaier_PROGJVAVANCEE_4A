@@ -18,8 +18,7 @@ public class PlayerMovementScript : MonoBehaviour
 
     public Collider col;
 
-    [SerializeField]
-    private float speedAuto;
+    public float speedAuto;
 
     private bool jumped=false;
     public float targetx;
