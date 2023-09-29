@@ -42060,7 +42060,6 @@ MonoBehaviour:
   BackgroundMusic: {fileID: 610571694}
   MomAnimator: {fileID: 1349719085}
   momScript: {fileID: 1349719084}
-  Mom: {fileID: 1349719083}
 --- !u!82 &937393145
 AudioSource:
   m_ObjectHideFlags: 0
@@ -62417,7 +62416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de04978283952c242b7e9a83a1aa495b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedAuto: 0.01
+  speedAuto: 0
 --- !u!95 &1349719085
 Animator:
   serializedVersion: 5

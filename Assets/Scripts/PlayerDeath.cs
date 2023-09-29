@@ -80,14 +80,15 @@ public class PlayerDeath : MonoBehaviour
     }
      IEnumerator MomEnter()
     {
-        //MomAnimator.SetBool("MomEnter", true);
         momScript.speedAuto = 3f;
         yield return new WaitForSeconds(1f);
-        momScript.speedAuto = 0.01f;
+        momScript.speedAuto = 0f;
         yield return new WaitForSeconds(2f);
-        momScript.SetZ(-5f);
+        momScript.speedAuto = -3f;
+        yield return new WaitForSeconds(1f);
+        momScript.speedAuto = 0f;
+        //momScript.GoBack();
         firstTime = true;
-        //MomAnimator.SetBool("MomEnter", false);
 
     }
 
