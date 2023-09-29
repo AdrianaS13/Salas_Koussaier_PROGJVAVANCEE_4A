@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerMovementScript : MonoBehaviour
 {
-   
+    #region Variables
+
     [SerializeField]
     public enum SIDE { Left,Mid,Right}
 
@@ -27,11 +28,8 @@ public class PlayerMovementScript : MonoBehaviour
     [SerializeField]public AudioSource Jump;
     public AudioSource Dash;
 
-    private void Start()
-    {
-        PlayerPrefs.GetInt("Player");
-
-    }
+    #endregion
+    #region Player movement
     void Update()
     {
         transform.position += transform.forward * Time.deltaTime * speedAuto;
@@ -56,7 +54,6 @@ public class PlayerMovementScript : MonoBehaviour
             {
                 NewXPos = xValue;
                 m_Side = SIDE.Right;
-
             }
             else if (m_Side == SIDE.Left)
             {
@@ -90,6 +87,7 @@ public class PlayerMovementScript : MonoBehaviour
 
         
     }
+    // Moving to an specific position. For lateral movement
     private IEnumerator MoveToPosition(float targetX)
     {
         while (Mathf.Abs(transform.position.x - targetX) > 0.01f)
@@ -102,7 +100,8 @@ public class PlayerMovementScript : MonoBehaviour
 
         animator.SetBool("Turn", false);
     }
-    
+    #endregion
+    #region Remove collider while animation dash
     public void RemoveCollider()
     {
         col.enabled = false;

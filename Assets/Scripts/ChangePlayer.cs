@@ -5,9 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class ChangePlayer : MonoBehaviour
 {
+    #region Variables
     [SerializeField]
     private GameObject[] characters;
     public int playerChosen=0;
+    #endregion
+    #region Chosing character to play
     public void ChangeCharacter(string r)
     {
         characters[playerChosen].SetActive(false);
@@ -22,6 +25,8 @@ public class ChangePlayer : MonoBehaviour
         characters[playerChosen].SetActive(true);
         
     }
+    #endregion
+    #region Save character selection
     public void SelectCharacter()
     {
         PlayerPrefs.SetInt("Player", playerChosen);
@@ -30,5 +35,5 @@ public class ChangePlayer : MonoBehaviour
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
-  
+    #endregion
 }
