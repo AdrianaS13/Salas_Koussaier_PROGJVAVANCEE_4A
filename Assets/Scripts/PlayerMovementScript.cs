@@ -22,17 +22,17 @@ public class PlayerMovementScript : MonoBehaviour
     private float speedAuto;
 
     private bool jumped=false;
+    public float targetx;
 
     [SerializeField]private AudioSource Jump;
     [SerializeField]private AudioSource Dash;
 
-
     void Update()
     {
         transform.position += transform.forward * Time.deltaTime * speedAuto;
-        if(Input.GetKeyDown(KeyCode.A)) 
-        { 
-            if(m_Side == SIDE.Mid)
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            if (m_Side == SIDE.Mid)
             {
                 NewXPos = -xValue;
                 m_Side = SIDE.Left;
@@ -42,20 +42,28 @@ public class PlayerMovementScript : MonoBehaviour
                 NewXPos = 0;
                 m_Side = SIDE.Mid;
             }
-        }else if (Input.GetKeyDown(KeyCode.D))
+
+            StartCoroutine(MoveToPosition(NewXPos));
+        }
+        else if (Input.GetKeyDown(KeyCode.D))
         {
             if (m_Side == SIDE.Mid)
             {
                 NewXPos = xValue;
                 m_Side = SIDE.Right;
+
             }
             else if (m_Side == SIDE.Left)
             {
                 NewXPos = 0;
                 m_Side = SIDE.Mid;
             }
+
+            StartCoroutine(MoveToPosition(NewXPos));
         }
-        transform.position = new Vector3(NewXPos, transform.position.y, transform.position.z);
+
+
+
         if (Input.GetKeyDown(KeyCode.S) && (!jumped))
         {
             animator.SetBool("GoDown", true);
@@ -76,6 +84,18 @@ public class PlayerMovementScript : MonoBehaviour
             jumped=false;
 
         
+    }
+    private IEnumerator MoveToPosition(float targetX)
+    {
+        while (Mathf.Abs(transform.position.x - targetX) > 0.01f)
+        {
+            animator.SetBool("Turn", true);
+            float step = speedAuto * 2 * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(targetX, transform.position.y, transform.position.z), step);
+            yield return null;
+        }
+
+        animator.SetBool("Turn", false);
     }
     
     public void RemoveCollider()
