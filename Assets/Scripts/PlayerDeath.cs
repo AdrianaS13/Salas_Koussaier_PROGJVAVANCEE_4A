@@ -81,6 +81,7 @@ public class PlayerDeath : MonoBehaviour
     }
      IEnumerator MomEnter()
     {
+        momScript.PlayAmyAudio();
         momScript.speedAuto = 3f;
         yield return new WaitForSeconds(1f);
         momScript.speedAuto = 0f;
@@ -88,7 +89,6 @@ public class PlayerDeath : MonoBehaviour
         momScript.speedAuto = -3f;
         yield return new WaitForSeconds(1f);
         momScript.speedAuto = 0f;
-        //momScript.GoBack();
         firstTime = true;
 
     }

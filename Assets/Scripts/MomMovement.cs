@@ -6,11 +6,11 @@ public class MomMovement : MonoBehaviour
 {
     
     public float speedAuto=0;
-    
-    public void GoBack()
+    [SerializeField]private AudioSource Amy;
+
+    public void PlayAmyAudio()
     {
-        transform.position = new Vector3(2.12586431e-18f,-3.59601984e-08f,-4.8265152f);
-        //transform.Translate(Vector3.back * 60 * Time.deltaTime);
+        Amy.Play();
     }
 
     // Update is called once per frame
