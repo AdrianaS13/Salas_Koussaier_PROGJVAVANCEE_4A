@@ -38,6 +38,16 @@ public class PlayerMovementScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A))
         {
             if (m_Side == SIDE.Mid)
+    [SerializeField]
+    private float speedAuto;
+
+
+    void Update()
+    {
+        transform.position += transform.forward * Time.deltaTime * speedAuto;
+        if(Input.GetKeyDown(KeyCode.A)) 
+        { 
+            if(m_Side == SIDE.Mid)
             {
                 NewXPos = -xValue;
                 m_Side = SIDE.Left;
@@ -56,7 +66,6 @@ public class PlayerMovementScript : MonoBehaviour
             {
                 NewXPos = xValue;
                 m_Side = SIDE.Right;
-
             }
             else if (m_Side == SIDE.Left)
             {
