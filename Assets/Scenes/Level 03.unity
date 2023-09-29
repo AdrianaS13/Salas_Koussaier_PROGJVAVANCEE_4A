@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.050741203, g: 0.061352998, b: 0.12912497, a: 1}
+  m_IndirectSpecularColor: {r: 0.050741248, g: 0.061353035, b: 0.12912488, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -33683,10 +33683,22 @@ PrefabInstance:
       propertyPath: col
       value: 
       objectReference: {fileID: 741472787}
+    - target: {fileID: 2020156130064474509, guid: d4cb0652fdeb52349876df2b1f3f32cc, type: 3}
+      propertyPath: Jump
+      value: 
+      objectReference: {fileID: 741472789}
     - target: {fileID: 7615197814271925599, guid: d4cb0652fdeb52349876df2b1f3f32cc, type: 3}
       propertyPath: Won
       value: 
       objectReference: {fileID: 958719097}
+    - target: {fileID: 7615197814271925599, guid: d4cb0652fdeb52349876df2b1f3f32cc, type: 3}
+      propertyPath: Death
+      value: 
+      objectReference: {fileID: 741472790}
+    - target: {fileID: 7615197814271925599, guid: d4cb0652fdeb52349876df2b1f3f32cc, type: 3}
+      propertyPath: Collect
+      value: 
+      objectReference: {fileID: 741472788}
     - target: {fileID: 7615197814271925599, guid: d4cb0652fdeb52349876df2b1f3f32cc, type: 3}
       propertyPath: GameWon
       value: 
@@ -33765,6 +33777,21 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -108576913577776861, guid: 7772c207b3c086f449d3fcab4672ee50, type: 3}
+--- !u!82 &741472788 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 874541815224950567, guid: d4cb0652fdeb52349876df2b1f3f32cc, type: 3}
+  m_PrefabInstance: {fileID: 741472784}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &741472789 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2009878946723282246, guid: d4cb0652fdeb52349876df2b1f3f32cc, type: 3}
+  m_PrefabInstance: {fileID: 741472784}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &741472790 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6323608186471223041, guid: d4cb0652fdeb52349876df2b1f3f32cc, type: 3}
+  m_PrefabInstance: {fileID: 741472784}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &741723913
 PrefabInstance:
   m_ObjectHideFlags: 0
