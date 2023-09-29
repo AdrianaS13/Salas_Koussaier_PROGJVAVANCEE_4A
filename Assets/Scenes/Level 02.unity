@@ -16558,10 +16558,22 @@ PrefabInstance:
       propertyPath: col
       value: 
       objectReference: {fileID: 1818923844}
+    - target: {fileID: 2020156130064474509, guid: d4cb0652fdeb52349876df2b1f3f32cc, type: 3}
+      propertyPath: Jump
+      value: 
+      objectReference: {fileID: 1818923846}
     - target: {fileID: 7615197814271925599, guid: d4cb0652fdeb52349876df2b1f3f32cc, type: 3}
       propertyPath: Won
       value: 
       objectReference: {fileID: 958719097}
+    - target: {fileID: 7615197814271925599, guid: d4cb0652fdeb52349876df2b1f3f32cc, type: 3}
+      propertyPath: Death
+      value: 
+      objectReference: {fileID: 1818923847}
+    - target: {fileID: 7615197814271925599, guid: d4cb0652fdeb52349876df2b1f3f32cc, type: 3}
+      propertyPath: Collect
+      value: 
+      objectReference: {fileID: 1818923845}
     - target: {fileID: 7615197814271925599, guid: d4cb0652fdeb52349876df2b1f3f32cc, type: 3}
       propertyPath: GameWon
       value: 
@@ -16640,6 +16652,21 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -108576913577776861, guid: 7772c207b3c086f449d3fcab4672ee50, type: 3}
+--- !u!82 &1818923845 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 874541815224950567, guid: d4cb0652fdeb52349876df2b1f3f32cc, type: 3}
+  m_PrefabInstance: {fileID: 1818923841}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1818923846 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2009878946723282246, guid: d4cb0652fdeb52349876df2b1f3f32cc, type: 3}
+  m_PrefabInstance: {fileID: 1818923841}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1818923847 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6323608186471223041, guid: d4cb0652fdeb52349876df2b1f3f32cc, type: 3}
+  m_PrefabInstance: {fileID: 1818923841}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1837183668
 PrefabInstance:
   m_ObjectHideFlags: 0
