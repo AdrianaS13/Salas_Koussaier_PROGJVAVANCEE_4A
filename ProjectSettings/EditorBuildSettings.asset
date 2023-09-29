@@ -9,7 +9,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: d85a9adf50c2414458242b9e41dbf17c
   - enabled: 1
+<<<<<<< HEAD
     path: Assets/Scenes/Level 01.unity
+=======
+    path: Assets/Scenes/ChangePlayer.unity
+    guid: 75d01346f86beab4093fe3a3ac021d8a
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+>>>>>>> c4b730cd70c611a2aad02c874679e37157dbf9e8
     guid: 938a77616fe1f7246a1450c4be360297
   - enabled: 1
     path: Assets/Scenes/Level 02.unity
