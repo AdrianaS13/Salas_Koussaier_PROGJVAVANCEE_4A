@@ -764,24 +764,16 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-<<<<<<< HEAD
   metroPackageName: CityMapper
-=======
-  metroPackageName: CitySurfer
->>>>>>> 23a8dcc3b63d477e49694f1214d8cd85c1f5328a
-  metroPackageVersion: 
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-<<<<<<< HEAD
   metroApplicationDescription: CityMapper
-=======
-  metroApplicationDescription: CitySurfer
->>>>>>> 23a8dcc3b63d477e49694f1214d8cd85c1f5328a
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: CityMapper
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0

@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class CheckPlayerSelection : MonoBehaviour
 {
+    #region Variables
     [SerializeField]
     private GameObject[] player;
     int playerSelected;
-
+    #endregion
+    #region Charging player selection
     void Start()
     {
         playerSelected = PlayerPrefs.GetInt("Player");
@@ -19,5 +21,6 @@ public class CheckPlayerSelection : MonoBehaviour
                 player[i].SetActive(true);
         }
     }
-    
+    #endregion
+
 }
