@@ -20,6 +20,11 @@ public class PlayerDeath : MonoBehaviour
     [SerializeField]private AudioSource Won;
     [SerializeField]private AudioSource BackgroundMusic;
 
+    private bool firstTime = true;
+    [SerializeField]private Animator MomAnimator;
+
+    public MomMovement momScript;
+
 
     void Update()
     {
@@ -40,14 +45,23 @@ public class PlayerDeath : MonoBehaviour
         }
     }
 
+
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "Obstacle")
-        {
-            Death.Play();
-            Time.timeScale = 0;
-            LostPanel.SetActive(true);
-            BackgroundMusic.Stop();
+        { 
+            if (firstTime)
+            {
+                StartCoroutine(MomEnter());
+                firstTime = false;
+            } else 
+            {
+                Death.Play();
+                Time.timeScale = 0;
+                LostPanel.SetActive(true);
+                BackgroundMusic.Stop();
+                firstTime = true;
+            }
         }
         if (collision.gameObject.tag == "Coin")
         {
@@ -63,6 +77,18 @@ public class PlayerDeath : MonoBehaviour
             BackgroundMusic.Stop();
             EndScore.text = "Score : "+score*10;
         }
+    }
+     IEnumerator MomEnter()
+    {
+        //MomAnimator.SetBool("MomEnter", true);
+        momScript.speedAuto = 3f;
+        yield return new WaitForSeconds(1f);
+        momScript.speedAuto = 0.01f;
+        yield return new WaitForSeconds(2f);
+        momScript.SetZ(-5f);
+        firstTime = true;
+        //MomAnimator.SetBool("MomEnter", false);
+
     }
 
     public void LoadNextLevel()
